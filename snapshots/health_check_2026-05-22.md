@@ -1,6 +1,6 @@
 # Trader-v2 Daily Health Check — 2026-05-22
 
-_Generated at 2026-05-22 04:05:54 by `scripts/daily_health_check.py`._
+_Generated at 2026-05-22 04:20:32 by `scripts/daily_health_check.py`._
 
 _This snapshot is deterministic — all sections are facts queried from DB / log / process state. AI interpretation happens in the remote Claude routine that reads this file._
 
@@ -8,16 +8,16 @@ _This snapshot is deterministic — all sections are facts queried from DB / log
 
 ## Process Health
 
-- **com.bull.trader-v2**: state=`running` pid=`66761` last_exit=`never`
-  - uptime/rss: `12:13  63440`
+- **com.bull.trader-v2**: state=`running` pid=`69049` last_exit=`never`
+  - uptime/rss: `05:58  80512`
 - **com.bull.trader-v2-dashboard**: state=`running` pid=`1899` last_exit=`(never`
-  - uptime/rss: `02-06:40:17  10496`
+  - uptime/rss: `02-06:54:55  10496`
 
 ---
 
 ## News-agent Freshness
 
-- **latest folder**: `2026-05-21_20-57-01` (age: 7.1h)
+- **latest folder**: `2026-05-21_20-57-01` (age: 7.3h)
 - **STATE_UPDATE.md**: ✓
 - **Trader_Handoff.json**: ✓
 - **Memory_Pack.yaml**: ✓
@@ -86,13 +86,13 @@ Sanity check: if `outcome_type` is 100% 'SUCCESS', that's the LLM self-flattery 
 
 | Agent | Symbol | Dir | Entry | Margin | Held/Max | % used | parent_thesis_id |
 |---|---|---|---|---|---|---|---|
-| A5_Contrarian | BABAUSDT | LONG | 132.33 | $1800 | 126.5h / 120h | 105% | (legacy) |
-| A5_Contrarian | GEUSDT | LONG | 280.43 | $2000 | 80.2h / 120h | 67% | (legacy) |
-| A5_Contrarian | ETHUSDT | LONG | 2129.11 | $2000 | 56.4h / 120h | 47% | (legacy) |
-| A7_PairsContrarian | TSMUSDT | LONG | 397.5 | $1409 | 20.9h / 120h | 17% | (legacy) |
-| A1_Momentum | NVDAUSDT | LONG | 221.5 | $2487 | 31.4h / 240h | 13% | (legacy) |
-| A1_Momentum | ARMUSDT | LONG | 265.63 | $2500 | 1.2h / 240h | 0% | (legacy) |
-| A5_Contrarian | METAUSDT | LONG | 596.53 | $2200 | -4.0h / 120h | -3% | (legacy) |
+| A5_Contrarian | BABAUSDT | LONG | 132.33 | $1800 | 126.7h / 120h | 106% | (legacy) |
+| A5_Contrarian | GEUSDT | LONG | 280.43 | $2000 | 80.5h / 120h | 67% | (legacy) |
+| A5_Contrarian | ETHUSDT | LONG | 2129.11 | $2000 | 56.7h / 120h | 47% | (legacy) |
+| A7_PairsContrarian | TSMUSDT | LONG | 397.5 | $1409 | 21.1h / 120h | 18% | (legacy) |
+| A1_Momentum | NVDAUSDT | LONG | 221.5 | $2487 | 31.6h / 240h | 13% | (legacy) |
+| A1_Momentum | ARMUSDT | LONG | 265.63 | $2500 | 1.4h / 240h | 1% | (legacy) |
+| A5_Contrarian | METAUSDT | LONG | 596.53 | $2200 | -3.8h / 120h | -3% | (legacy) |
 
 Total open: 7. Pre-Phase-2 legacy (no parent_thesis_id): 7.
 ⚠ 1 positions ≥80% of max_hold — approaching time stop.
@@ -103,7 +103,7 @@ Total open: 7. Pre-Phase-2 legacy (no parent_thesis_id): 7.
 
 | Day | Total equity (EOD) |
 |---|---|
-| 2026-05-22 | $71,861 |
+| 2026-05-22 | $72,092 |
 | 2026-05-21 | $71,789 |
 | 2026-05-20 | $70,852 |
 | 2026-05-19 | $70,706 |
@@ -111,7 +111,7 @@ Total open: 7. Pre-Phase-2 legacy (no parent_thesis_id): 7.
 | 2026-05-17 | $70,976 |
 | 2026-05-16 | $70,750 |
 | 2026-05-15 | $70,996 |
-**Today vs yesterday: +$72**
+**Today vs yesterday: +$303**
 
 ---
 
@@ -119,9 +119,9 @@ Total open: 7. Pre-Phase-2 legacy (no parent_thesis_id): 7.
 
 | Category | Count |
 |---|---|
-| yfinance (benign noise) | 986 |
-| Python Traceback | 386 |
-| Other ERROR | 386 |
+| yfinance (benign noise) | 982 |
+| Python Traceback | 384 |
+| Other ERROR | 384 |
 2 categories worth attention.
 
 ---
