@@ -1,6 +1,6 @@
 # Trader-v2 Daily Health Check — 2026-05-22
 
-_Generated at 2026-05-22 04:20:32 by `scripts/daily_health_check.py`._
+_Generated at 2026-05-22 11:30:06 by `scripts/daily_health_check.py`._
 
 _This snapshot is deterministic — all sections are facts queried from DB / log / process state. AI interpretation happens in the remote Claude routine that reads this file._
 
@@ -8,16 +8,16 @@ _This snapshot is deterministic — all sections are facts queried from DB / log
 
 ## Process Health
 
-- **com.bull.trader-v2**: state=`running` pid=`69049` last_exit=`never`
-  - uptime/rss: `05:58  80512`
+- **com.bull.trader-v2**: state=`running` pid=`70116` last_exit=`never`
+  - uptime/rss: `07:00:10  80624`
 - **com.bull.trader-v2-dashboard**: state=`running` pid=`1899` last_exit=`(never`
-  - uptime/rss: `02-06:54:55  10496`
+  - uptime/rss: `02-14:04:29  10592`
 
 ---
 
 ## News-agent Freshness
 
-- **latest folder**: `2026-05-21_20-57-01` (age: 7.3h)
+- **latest folder**: `2026-05-22_09-30-08` (age: 2.0h)
 - **STATE_UPDATE.md**: ✓
 - **Trader_Handoff.json**: ✓
 - **Memory_Pack.yaml**: ✓
@@ -27,8 +27,8 @@ _This snapshot is deterministic — all sections are facts queried from DB / log
 ## Morning Batch (recent log markers)
 
 Status of morning-batch markers in last ~5MB of log:
-- `DAILY STRATEGIST START`: ✗
-- `DAILY STRATEGIST END`: ✗
+- `DAILY STRATEGIST START`: ✓
+- `DAILY STRATEGIST END`: ✓
 - `DAILY PLANNER START`: ✓
 - `DAILY PLANNER END`: ✓
 - `DAILY MACRO MANAGER START`: ✓
@@ -40,9 +40,24 @@ Status of morning-batch markers in last ~5MB of log:
 
 ---
 
-## Strategist Output (today)
+## Strategist Output (latest package)
 
-**No theses in DB.** Strategist may not have run yet, or persistence failed. P0 issue.
+- **package_id**: `1`
+- **generated_at**: `2026-05-22 09:50:42` (age: 1.7h, today's: **YES**)
+- **active_theses count**: 2 (expected 1-3)
+- **alternative_hypotheses count**: 2 (expected ≥1)
+
+### Active theses (the spine of today's trading)
+- **#2** (conf=0.82, horizon=5d, 6 symbols incl 0 primary)
+  - Claim: AI capex phase-2 rotation is concentrating the remaining bid into narrow semiconductor proxies (ARM, NVDA) while bleeding breadth from megacap hardware, creating a late-phase exhau…
+  - Falsification: NVDA-ASML 7d correlation re-couples above 0.60 AND ASML-GC=F 7d correlation drops below 0.40 AND the ratio of advancing-to-declining semiconductor symbols tracked in the macro report exceeds 2:1 for three consecutive ses…
+- **#3** (conf=0.70, horizon=2d, 2 symbols incl 0 primary)
+  - Claim: Gold's fiscal-premium correlation with bonds is being artificially sustained by pre-FOMC compression, while concurrent dollar-carry strength creates a second-order headwind; the me…
+  - Falsification: GC=F-TLT 7d correlation drops below 0.75 within 24 hours of FOMC minutes release AND XAUUSDT posts a negative daily return while TLT posts a positive daily return, confirming gold has severed its fiscal-premium collatera…
+
+### Alternative hypotheses (rejected counter-theses)
+- Oil-bond decoupling (CL=F-TLT z=-2.734) signals early cyclical growth reacceleration and supply-scarcity repricing independent of the rates complex.
+- EUR-driven DXY weakness will persist, supporting sustained risk-on and dollar-debasement trades.
 
 ---
 
@@ -86,13 +101,13 @@ Sanity check: if `outcome_type` is 100% 'SUCCESS', that's the LLM self-flattery 
 
 | Agent | Symbol | Dir | Entry | Margin | Held/Max | % used | parent_thesis_id |
 |---|---|---|---|---|---|---|---|
-| A5_Contrarian | BABAUSDT | LONG | 132.33 | $1800 | 126.7h / 120h | 106% | (legacy) |
-| A5_Contrarian | GEUSDT | LONG | 280.43 | $2000 | 80.5h / 120h | 67% | (legacy) |
-| A5_Contrarian | ETHUSDT | LONG | 2129.11 | $2000 | 56.7h / 120h | 47% | (legacy) |
-| A7_PairsContrarian | TSMUSDT | LONG | 397.5 | $1409 | 21.1h / 120h | 18% | (legacy) |
-| A1_Momentum | NVDAUSDT | LONG | 221.5 | $2487 | 31.6h / 240h | 13% | (legacy) |
-| A1_Momentum | ARMUSDT | LONG | 265.63 | $2500 | 1.4h / 240h | 1% | (legacy) |
-| A5_Contrarian | METAUSDT | LONG | 596.53 | $2200 | -3.8h / 120h | -3% | (legacy) |
+| A5_Contrarian | BABAUSDT | LONG | 132.33 | $1800 | 133.9h / 120h | 112% | (legacy) |
+| A5_Contrarian | GEUSDT | LONG | 280.43 | $2000 | 87.6h / 120h | 73% | (legacy) |
+| A5_Contrarian | ETHUSDT | LONG | 2129.11 | $2000 | 63.8h / 120h | 53% | (legacy) |
+| A7_PairsContrarian | TSMUSDT | LONG | 397.5 | $1409 | 28.3h / 120h | 24% | (legacy) |
+| A1_Momentum | NVDAUSDT | LONG | 221.5 | $2487 | 38.8h / 240h | 16% | (legacy) |
+| A1_Momentum | ARMUSDT | LONG | 265.63 | $2500 | 8.6h / 240h | 4% | (legacy) |
+| A5_Contrarian | METAUSDT | LONG | 596.53 | $2200 | 3.4h / 120h | 3% | (legacy) |
 
 Total open: 7. Pre-Phase-2 legacy (no parent_thesis_id): 7.
 ⚠ 1 positions ≥80% of max_hold — approaching time stop.
@@ -103,7 +118,7 @@ Total open: 7. Pre-Phase-2 legacy (no parent_thesis_id): 7.
 
 | Day | Total equity (EOD) |
 |---|---|
-| 2026-05-22 | $72,092 |
+| 2026-05-22 | $72,346 |
 | 2026-05-21 | $71,789 |
 | 2026-05-20 | $70,852 |
 | 2026-05-19 | $70,706 |
@@ -111,7 +126,7 @@ Total open: 7. Pre-Phase-2 legacy (no parent_thesis_id): 7.
 | 2026-05-17 | $70,976 |
 | 2026-05-16 | $70,750 |
 | 2026-05-15 | $70,996 |
-**Today vs yesterday: +$303**
+**Today vs yesterday: +$557**
 
 ---
 
@@ -119,9 +134,9 @@ Total open: 7. Pre-Phase-2 legacy (no parent_thesis_id): 7.
 
 | Category | Count |
 |---|---|
-| yfinance (benign noise) | 982 |
-| Python Traceback | 384 |
-| Other ERROR | 384 |
+| yfinance (benign noise) | 968 |
+| Python Traceback | 377 |
+| Other ERROR | 377 |
 2 categories worth attention.
 
 ---
